@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/tab_zixun_selector"
+                        android:scaleType="centerInside"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:text="@string/main_news"
+                        android:padding="8dp"
+                        android:textColor="@drawable/tab_bottom_text_color_selector"
+                        />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/tab_kanqiu_selector"
+                        android:scaleType="centerInside"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:text="@string/main_match"
+                        android:padding="8dp"
+                        android:textColor="@drawable/tab_bottom_text_color_selector"
+                        />
+        </LinearLayout>
+
+
+
+
+
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/logo_selector"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:layout_weight="1"
+            />
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/tab_shuju_selector"
+                        android:scaleType="centerInside"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:text="@string/main_footballinfo"
+                        android:padding="8dp"
+                        android:textColor="@drawable/tab_bottom_text_color_selector"
+                        />
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/tab_qiumiquan_selector"
+                        android:scaleType="centerInside"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:text="@string/main_fancenter"
+                        android:padding="8dp"
+                        android:textColor="@drawable/tab_bottom_text_color_selector"
+                        />
+        </LinearLayout>
+
+
+</LinearLayout>

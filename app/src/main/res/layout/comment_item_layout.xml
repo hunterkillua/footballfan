@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <com.zqf.footballfan.android.widget.CircleImageView
+            android:id="@+id/image"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/icon_logo"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/theme_color_main"
+            />
+
+    <LinearLayout
+            android:id="@+id/center"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/vote_icon_selector"/>
+
+        <TextView
+                android:id="@+id/vote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="13sp"
+                style="@style/text_title"
+                android:text="2016"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+            android:id="@+id/comment_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@+id/image"
+            android:layout_toLeftOf="@+id/center"
+            >
+        <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="text"
+                android:gravity="left"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/text_author"/>
+
+        <TextView
+                android:id="@+id/identity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="text........"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/text_identity"/>
+
+        <TextView
+                android:id="@+id/comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                style="@style/text_content"
+                android:text="hahahahah"
+                />
+    </LinearLayout>
+
+</RelativeLayout>

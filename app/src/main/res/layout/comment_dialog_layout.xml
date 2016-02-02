@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:background="#95ffffff"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+        <com.zqf.footballfan.android.widget.TitleTabView
+                android:id="@+id/reply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/center"
+                android:layout_margin="10dp"
+                app:icon="@drawable/huifu"
+                app:text="@string/reply"/>
+
+        <RelativeLayout
+                android:id="@+id/center"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/zuqiu">
+
+                <com.zqf.footballfan.android.widget.TitleTabView
+                        android:id="@+id/collect"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_centerInParent="true"
+                        app:icon="@drawable/shoucang"
+                        app:text="@string/collect"/>
+
+                <com.zqf.footballfan.android.widget.TitleTabView
+                        android:id="@+id/copy"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_above="@+id/collect"
+                        android:layout_toLeftOf="@id/collect"
+                        app:icon="@drawable/fuzhi"
+                        app:text="@string/copy"/>
+
+                <com.zqf.footballfan.android.widget.TitleTabView
+                        android:id="@+id/jubao"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_above="@+id/collect"
+                        android:layout_toRightOf="@id/collect"
+                        app:icon="@drawable/jubao"
+                        app:text="@string/jubao"/>
+
+                <com.zqf.footballfan.android.widget.TitleTabView
+                        android:id="@+id/weixin"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_below="@+id/copy"
+                        android:layout_toLeftOf="@id/collect"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="20dp"
+                        app:icon="@drawable/weixin"
+                        app:text="@string/weixin"/>
+
+                <com.zqf.footballfan.android.widget.TitleTabView
+                        android:id="@+id/weibo"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_below="@+id/jubao"
+                        android:layout_toRightOf="@id/collect"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="20dp"
+                        app:icon="@drawable/weibo"
+                        app:text="@string/weibo"/>
+
+                <com.zqf.footballfan.android.widget.TitleTabView
+                        android:id="@+id/pengyouquan"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_below="@+id/collect"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        app:icon="@drawable/pengyouquan"
+                        app:text="@string/pengyouquan"/>
+
+        </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="theme_color_main">#FF7789a4</color>
+    <color name="theme_color_title">#FF7789a4</color>
+    <color name="theme_color_desc">#FF666666</color>
+    <color name="theme_color_content">#FF666666</color>
+    <color name="theme_color_text">#FF666666</color>
+    <color name="theme_color_author">#FF7789a4</color>
+    <color name="theme_color_identity">#FF7789a4</color>
+
+    <color name="theme_color_timeline_text">#FFFFFFFF</color>
+    <color name="theme_color_timeline_text_bg1">#FFa1a1a1</color>
+    <color name="theme_color_timeline_text_bg2">#FF7789a4</color>
+    <color name="theme_color_timeline_bg">#FFefefef</color>
+
+    <color name="theme_color_tab_title_select">#FFFFFFFF</color>
+    <color name="theme_color_tab_title">#FF7789a4</color>
+    <color name="theme_color_tab_bottom_title_select">#FF7789a4</color>
+    <color name="theme_color_tab_bottom_title">#FF121212</color>
+    <color name="theme_color_tab_bg_select">#00000000</color>
+    <color name="theme_color_tab_bg">#FFD6BC53</color>
+
+    <color name="topbar_bg">#FFefefef</color>
+
+    <color name="list_devided">#FFe1e1e1</color>
+
+</resources>

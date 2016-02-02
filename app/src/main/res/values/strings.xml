@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">足球疯</string>
+    <string name="main_news">资讯</string>
+    <string name="main_match">看球</string>
+    <string name="main_footballinfo">数据</string>
+    <string name="main_fancenter">球迷圈</string>
+    <string name="main_football">足球疯</string>
+    
+    <string name="news_tab_focus">焦点</string>
+    <string name="news_tab_info">国内资讯</string>
+    <string name="news_tab_match">五大联赛</string>
+    <string name="news_tab_think">见地</string>
+    <string name="news_tab_topic">专题</string>
+
+    <string name="match_tab_focus">焦点</string>
+    <string name="match_tab_info">国内赛事</string>
+    <string name="match_tab_match">五大联赛</string>
+    <string name="match_tab_cup">杯赛</string>
+    <string name="match_tab_other">其他</string>
+
+    <string name="info_tab_country">国家</string>
+    <string name="info_tab_match">赛事</string>
+    <string name="info_tab_team">球队</string>
+    <string name="info_tab_member">球员</string>
+    <string name="info_tab_other">其他</string>
+
+    <string name="fan_tab_user">个人</string>
+    <string name="fan_tab_about">我</string>
+    <string name="fan_tab_match">论坛</string>
+    <string name="fan_tab_collect">收藏</string>
+    <string name="fan_tab_act">活动</string>
+
+    <string name="title_comment">评论</string>
+    <string name="comment_hot">热评</string>
+    <string name="comment_new">最新</string>
+
+    <string name="reply">回复</string>
+    <string name="collect">收藏</string>
+    <string name="copy">复制</string>
+    <string name="weixin">微信</string>
+    <string name="weibo">微博</string>
+    <string name="jubao">举报</string>
+    <string name="pengyouquan">朋友圈</string>
+
+
+</resources>

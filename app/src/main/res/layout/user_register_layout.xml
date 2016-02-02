@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="试用您的手机号注册"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/theme_color_main"
+            android:textSize="14sp"/>
+
+    <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/theme_main_text_bg_selector"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/theme_color_main"
+            android:textSize="14sp"/>
+
+    <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取验证码"
+                android:padding="10dp"
+                android:gravity="center"
+                android:background="@drawable/news_user_item_text_btn"
+                android:textColor="@drawable/news_user_item_text_btn"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/theme_main_text_bg_selector"
+                android:hint="输入验证码"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/theme_color_main"
+                android:textSize="14sp"
+                android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="下一步"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="@drawable/news_user_item_text_btn"
+            android:textColor="@drawable/news_user_item_text_btn"
+            android:textSize="14sp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="5dp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="或使用以下帐号登录"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/theme_color_main"
+            android:textSize="14sp"/>
+
+
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+        <com.zqf.footballfan.android.widget.TitleTabView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:icon="@drawable/tab_zixun_selector"
+                app:text="@string/main_news"/>
+
+        <com.zqf.footballfan.android.widget.TitleTabView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:icon="@drawable/tab_kanqiu_selector"
+                app:text="@string/main_match"/>
+
+
+        <com.zqf.footballfan.android.widget.TitleTabView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:icon="@drawable/icon_logo"
+                app:text="@string/main_football"/>
+
+
+        <com.zqf.footballfan.android.widget.TitleTabView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:icon="@drawable/tab_shuju_selector"
+                app:text="@string/main_footballinfo"/>
+
+
+        <com.zqf.footballfan.android.widget.TitleTabView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:icon="@drawable/tab_qiumiquan_selector"
+                app:text="@string/main_fancenter"/>
+
+</LinearLayout>

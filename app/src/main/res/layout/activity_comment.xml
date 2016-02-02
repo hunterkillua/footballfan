@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:background="#ffffff"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.zqf.footballfan.android.widget.TopBarLayout
+            android:id="@+id/topbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:topbarLeftIcon="@drawable/fanhui"
+            app:topbarRightIcon="@drawable/zhuanxiepinglun"
+            app:topbarTitle="@string/title_comment"/>
+
+    <com.zqf.footballfan.android.widget.ViewPagerSlidingTabs
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/theme_color_main"
+            />
+
+    <com.zqf.footballfan.android.widget.UnTouchViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+</LinearLayout>
