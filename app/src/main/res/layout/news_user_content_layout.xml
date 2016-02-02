@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:baselineAligned="false"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:orientation="horizontal">
@@ -23,12 +24,11 @@
 
         <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="用户"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="0"
                 style="@style/text_author"/>
 
     </LinearLayout>

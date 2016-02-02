@@ -185,15 +185,15 @@ public class ViewPagerSlidingTabs extends HorizontalScrollView implements
     }
 
     public void selectPage(int position) {
-//        for (int i = 0; i < mAdapter.getCount(); ++i) {
-//            View tv = mTabsContainer.getChildAt(i);
-//            final boolean selected = i == position;
-//            if (selected) {
-//                select(tv);
-//            } else {
-//                unSelect(tv);
-//            }
-//        }
+        for (int i = 0; i < mAdapter.getCount(); ++i) {
+            View tv = mTabsContainer.getChildAt(i);
+            final boolean selected = i == position;
+            if (selected) {
+                select(tv);
+            } else {
+                unSelect(tv);
+            }
+        }
         View tv = mTabsContainer.getChildAt(position);
         select(tv);
     }

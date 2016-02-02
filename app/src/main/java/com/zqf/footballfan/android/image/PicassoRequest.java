@@ -1,8 +1,8 @@
 package com.zqf.footballfan.android.image;
 
+import android.content.Context;
 import android.widget.ImageView;
 
-import com.adamrocker.android.input.simeji.App;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestCreator;
 
@@ -12,8 +12,10 @@ import java.io.File;
  * Created by liyan on 16/1/4.
  */
 public class PicassoRequest extends ImageRequest {
+    Context context;
 
-    public PicassoRequest() {
+    public PicassoRequest(Context context) {
+        this.context = context;
     }
 
     @Override
@@ -24,11 +26,11 @@ public class PicassoRequest extends ImageRequest {
         RequestCreator requestCreator = null;
         if (url != null && url.length() > 0) {
             if (url.startsWith("http")) {
-                requestCreator = Picasso.with(App.instance).load(url);
+                requestCreator = Picasso.with(context).load(url);
             } else {
                 File file = new File(url);
                 if (file.exists()) {
-                    requestCreator = Picasso.with(App.instance).load(new File(url));
+                    requestCreator = Picasso.with(context).load(new File(url));
                 }
             }
         }

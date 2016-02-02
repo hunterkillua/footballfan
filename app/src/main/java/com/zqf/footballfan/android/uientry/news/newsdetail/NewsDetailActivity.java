@@ -48,10 +48,6 @@ public class NewsDetailActivity extends Activity {
 
         });
         mWebView.setWebViewClient(new WebViewClient() {
-            @Override
-            public void onPageStarted(WebView view, String url, Bitmap favicon) {
-                super.onPageStarted(view, url, favicon);
-            }
 
             public void onReceivedError(WebView view, int errorCode,
                                         String description, String failingUrl) {

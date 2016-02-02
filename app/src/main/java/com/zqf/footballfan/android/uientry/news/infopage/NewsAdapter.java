@@ -51,7 +51,7 @@ public class NewsAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.news_content_item_layout, null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.news_content_item_layout, parent, false);
             holder = new ViewHolder();
             holder.titleTv = (TextView) convertView.findViewById(R.id.title);
             holder.descTv = (TextView) convertView.findViewById(R.id.desc);

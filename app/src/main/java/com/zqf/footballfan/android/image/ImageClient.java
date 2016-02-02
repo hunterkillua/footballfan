@@ -1,5 +1,6 @@
 package com.zqf.footballfan.android.image;
 
+import android.content.Context;
 
 /**
  * Created by liyan on 16/1/4.
@@ -12,8 +13,8 @@ public class ImageClient {
         return instance;
     }
 
-    public ImageRequest load(String url) {
-        return new PicassoRequest().load(url);
+    public ImageRequest load(Context context, String url) {
+        return new PicassoRequest(context).load(url);
     }
 
 }

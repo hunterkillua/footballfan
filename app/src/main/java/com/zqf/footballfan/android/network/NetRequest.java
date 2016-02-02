@@ -9,8 +9,8 @@ import org.apache.http.NameValuePair;
  */
 public interface NetRequest {
 
-    public String doHttpGet(String url, List<NameValuePair> headers, boolean ignoreSslVerify);
+    String doHttpGet(String url, List<NameValuePair> headers, boolean ignoreSslVerify);
 
-    public String doHttpPost(String url, List<NameValuePair> params);
+    String doHttpPost(String url, List<NameValuePair> params);
 
 }

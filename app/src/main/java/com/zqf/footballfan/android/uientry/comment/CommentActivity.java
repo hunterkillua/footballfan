@@ -3,7 +3,6 @@ package com.zqf.footballfan.android.uientry.comment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -17,30 +16,30 @@ import com.zqf.footballfan.android.widget.ViewPagerSlidingTabs;
  * Created by liyan on 16/1/2.
  */
 public class CommentActivity extends FragmentActivity {
-    ViewPager viewPager;
-    ViewPagerSlidingTabs tabsView;
-    TitleFragmentAdapter titleFragmentAdapter;
+    private ViewPager mViewPager;
+    private ViewPagerSlidingTabs mTabsView;
+    private TitleFragmentAdapter mTitleFragmentAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment);
         initTopBar();
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
-        tabsView = (ViewPagerSlidingTabs) findViewById(R.id.tabs);
-        titleFragmentAdapter = new TitleFragmentAdapter(this, getSupportFragmentManager());
-        titleFragmentAdapter.addFragment(new CommentFragment(), getString(R.string.comment_hot));
-        titleFragmentAdapter.addFragment(new CommentFragment(), getString(R.string.comment_new));
+        mViewPager = (ViewPager) findViewById(R.id.viewpager);
+        mTabsView = (ViewPagerSlidingTabs) findViewById(R.id.tabs);
+        mTitleFragmentAdapter = new TitleFragmentAdapter(this, getSupportFragmentManager());
+        mTitleFragmentAdapter.addFragment(new CommentFragment(), getString(R.string.comment_hot));
+        mTitleFragmentAdapter.addFragment(new CommentFragment(), getString(R.string.comment_new));
 
-        viewPager.setAdapter(titleFragmentAdapter);
-        tabsView.initViewPager(viewPager);
-        //tabsView.initTabView();
-        tabsView.setSmooth(false);
+        mViewPager.setAdapter(mTitleFragmentAdapter);
+        mTabsView.initViewPager(mViewPager);
+        //mTabsView.initTabView();
+        mTabsView.setSmooth(false);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout
                 .LayoutParams.WRAP_CONTENT);
-        tabsView.setTabView(R.layout.comment_tab_layout, params);
-        tabsView.selectPage(0);
-        viewPager.setCurrentItem(0);
+        mTabsView.setTabView(R.layout.comment_tab_layout, params);
+        mTabsView.selectPage(0);
+        mViewPager.setCurrentItem(0);
     }
 
     private void initTopBar() {

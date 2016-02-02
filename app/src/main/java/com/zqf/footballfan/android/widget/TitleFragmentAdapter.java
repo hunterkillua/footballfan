@@ -13,7 +13,6 @@ import java.util.List;
  * Created by liyan on 15/12/13.
  */
 public class TitleFragmentAdapter extends FragmentPagerAdapter{
-    private Context mContext;
 
     private List<Fragment> mFragments;
     private List<String> mTitles;
@@ -21,7 +20,6 @@ public class TitleFragmentAdapter extends FragmentPagerAdapter{
 
     public TitleFragmentAdapter(Context context, FragmentManager fm) {
         super(fm);
-        mContext = context;
     }
 
     public void addFragment(Fragment fragment, String title) {

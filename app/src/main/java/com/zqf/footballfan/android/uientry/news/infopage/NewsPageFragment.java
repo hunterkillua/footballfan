@@ -76,8 +76,7 @@ public class NewsPageFragment extends Fragment{
 
     private View getHeaderView(Context context) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.news_top_layout, null);
-        return view;
+        return inflater.inflate(R.layout.news_top_layout, null);
     }
 
     private void initHeaderView() {

@@ -17,9 +17,9 @@ import java.util.List;
  */
 public class CommentAdapter extends BaseAdapter {
 
-    Context mContext;
-    List<CommentData> mList;
-    View.OnClickListener mListener;
+    private Context mContext;
+    private List<CommentData> mList;
+    private View.OnClickListener mListener;
 
     public CommentAdapter(Context context, List<CommentData> list) {
         mContext = context;

@@ -72,8 +72,8 @@ public class TopBarLayout extends RelativeLayout {
     }
 
     public interface ClickListener {
-        public void onLeftClick(View view);
-        public void onRightClick(View view);
+        void onLeftClick(View view);
+        void onRightClick(View view);
     }
 
     private View.OnClickListener viewListener = new View.OnClickListener () {

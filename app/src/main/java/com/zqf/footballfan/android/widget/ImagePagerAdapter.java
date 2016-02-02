@@ -2,15 +2,14 @@ package com.zqf.footballfan.android.widget;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
+import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
-import com.zqf.footballfan.android.R;
 
 import java.lang.ref.SoftReference;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -19,7 +18,7 @@ import java.util.List;
 public class ImagePagerAdapter extends PagerAdapter {
 
     List<String> imageList;
-    HashMap<Integer, SoftReference<View>> views=new HashMap<Integer, SoftReference<View>>();
+    SparseArray<SoftReference<View>> views=new SparseArray<SoftReference<View>>();
     int width = 0;
     int height = 0;
     private Context mContext;

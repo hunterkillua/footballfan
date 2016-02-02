@@ -19,9 +19,9 @@ import java.util.List;
  */
 public class NewsTopicFragment extends Fragment {
 
-    public boolean mLoaded = false;
+    private boolean mLoaded = false;
     ListView listView;
-    NewsTopicAdapter mAdapter;
+    private NewsTopicAdapter mAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {

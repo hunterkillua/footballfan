@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.zqf.footballfan.android.R;
-import com.zqf.footballfan.android.uientry.news.topicpage.TopicData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,16 +18,16 @@ import java.util.List;
  */
 public class CommentFragment extends Fragment {
 
-    ListView listView;
-    CommentAdapter adapter;
+    private ListView mListView;
+    private CommentAdapter mAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-        listView = (ListView) inflater.inflate(R.layout.news_list_view, null);
+        mListView = (ListView) inflater.inflate(R.layout.news_list_view, null);
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams
                 .MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        listView.setLayoutParams(layoutParams);
-        return listView;
+        mListView.setLayoutParams(layoutParams);
+        return mListView;
     }
 
     @Override
@@ -54,8 +53,8 @@ public class CommentFragment extends Fragment {
             dataList.add(data);
         }
 
-        adapter = new CommentAdapter(getActivity(), dataList);
-        adapter.setOnClickListener(new View.OnClickListener() {
+        mAdapter = new CommentAdapter(getActivity(), dataList);
+        mAdapter.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -68,7 +67,7 @@ public class CommentFragment extends Fragment {
 
             }
         });
-        listView.setAdapter(adapter);
+        mListView.setAdapter(mAdapter);
     }
 
     private void showCommentDialog(CommentData data) {
