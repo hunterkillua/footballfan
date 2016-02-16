@@ -2,6 +2,7 @@ package com.zqf.footballfan.android;
 
 import android.app.Application;
 
+import com.zqf.footballfan.android.util.CrashHandler;
 import com.zqf.footballfan.android.util.DensityUtil;
 
 /**
@@ -12,6 +13,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        CrashHandler.getInstance().init(this);
         DensityUtil.initDensityConstants(this);
     }
 }

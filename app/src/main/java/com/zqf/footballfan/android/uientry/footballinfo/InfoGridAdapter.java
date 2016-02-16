@@ -44,7 +44,7 @@ public class InfoGridAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.circle_image_item_layout, null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.circle_image_item_layout, parent, false);
             holder = new ViewHolder();
             holder.imageView = (ImageView) convertView.findViewById(R.id.image);
             holder.textView = (TextView) convertView.findViewById(R.id.text);

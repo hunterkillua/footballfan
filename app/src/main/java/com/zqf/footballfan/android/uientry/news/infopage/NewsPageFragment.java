@@ -34,7 +34,7 @@ public class NewsPageFragment extends Fragment{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-        listView = (ListView) inflater.inflate(R.layout.news_list_view, null);
+        listView = (ListView) inflater.inflate(R.layout.news_list_view, container, false);
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams
                 .MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         listView.setLayoutParams(layoutParams);
