@@ -48,9 +48,8 @@ public class MacthInfoFragment extends Fragment {
         titleFragmentAdapter.addFragment(fragment, getString(R.string.match_tab_other));
         viewPager.setAdapter(titleFragmentAdapter);
         tabsView.initViewPager(viewPager);
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout
-                .LayoutParams.WRAP_CONTENT);
-        tabsView.setTabView(R.layout.main_top_tab_layout, params);
+        tabsView.setTabView(R.layout.main_top_tab_layout);
+        tabsView.addStripLayout(R.layout.view_pager_tab_strip_layout);
         tabsView.selectPage(0);
     }
 }

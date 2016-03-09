@@ -23,7 +23,7 @@ public class InfoDetailFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fbinfo_main_layout, null);
+        return inflater.inflate(R.layout.fbinfo_main_layout, container, false);
     }
 
     @Override

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
+import android.widget.Scroller;
 import android.widget.TextView;
 
 import com.zqf.footballfan.android.R;
@@ -27,6 +28,8 @@ public class ViewPagerSlidingTabs extends HorizontalScrollView implements
     private ViewGroup mTabsContainer;
     private LinearLayout mcontainer;
     private LinearLayout.LayoutParams mTabLayoutParams;
+
+
 
     private boolean mSmooth = true;
 
@@ -47,10 +50,8 @@ public class ViewPagerSlidingTabs extends HorizontalScrollView implements
     protected void onFinishInflate() {
         super.onFinishInflate();
         setHorizontalScrollBarEnabled(false);
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.viewpager_container_layout, null);
-        //mcontainer = (LinearLayout) view.findViewById(R.id.view_pager_tab_container);
-        mcontainer = (LinearLayout) view;
-        addView(view, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        mcontainer = (LinearLayout) LayoutInflater.from(getContext()).inflate(R.layout.viewpager_container_layout, this, false);
+        addView(mcontainer);
         setFillViewport(true);
         setWillNotDraw(false);
     }
@@ -104,6 +105,12 @@ public class ViewPagerSlidingTabs extends HorizontalScrollView implements
         initChildTab();
     }
 
+    public void setTabView(int id) {
+        mTabsContainer = (ViewGroup) LayoutInflater.from(getContext()).inflate(id, mcontainer, false);
+        mcontainer.addView(mTabsContainer);
+        initChildTab();
+    }
+
     private void initChildTab() {
         View tabView;
         for(int i = 0; i < mTabsContainer.getChildCount(); i++) {
@@ -131,26 +138,26 @@ public class ViewPagerSlidingTabs extends HorizontalScrollView implements
         }
     }
 
-    private void addTab(final int position, CharSequence title, View tabView) {
-        TextView textView = (TextView) tabView.findViewById(R.id.tab_textivew);
-        if (textView != null) {
-            if (title != null) textView.setText(title);
-        }
-
-        tabView.setFocusable(true);
-        tabView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mViewPager.getCurrentItem() != position) {
-                    View tab = mTabsContainer.getChildAt(mViewPager.getCurrentItem());
-                    unSelect(tab);
-                    mViewPager.setCurrentItem(position);
-                }
-            }
-        });
-
-        mTabsContainer.addView(tabView, position, mTabLayoutParams);
-    }
+//    private void addTab(final int position, CharSequence title, View tabView) {
+//        TextView textView = (TextView) tabView.findViewById(R.id.tab_textivew);
+//        if (textView != null) {
+//            if (title != null) textView.setText(title);
+//        }
+//
+//        tabView.setFocusable(true);
+//        tabView.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (mViewPager.getCurrentItem() != position) {
+//                    View tab = mTabsContainer.getChildAt(mViewPager.getCurrentItem());
+//                    unSelect(tab);
+//                    mViewPager.setCurrentItem(position);
+//                }
+//            }
+//        });
+//
+//        mTabsContainer.addView(tabView, position, mTabLayoutParams);
+//    }
 
     private void unSelect(View tab) {
         if (tab != null) {
@@ -196,6 +203,40 @@ public class ViewPagerSlidingTabs extends HorizontalScrollView implements
         }
         View tv = mTabsContainer.getChildAt(position);
         select(tv);
+
+////////////////////////////////////
+        if (canScroll()) {
+            mLastSelection = mSelection;
+            mSelection = position;
+            // 选中位置需要变化
+            mStripSelection = -1;
+            mNextSelection = -1;
+            View view = mTabsContainer.getChildAt(position);
+            int measureWidth = view.getMeasuredWidth();
+            ViewGroup.LayoutParams params = mStripView.getLayoutParams();
+            int currentWidth = mStripView.getMeasuredWidth();
+            int endWidth = measureWidth;
+            mStripView.setLayoutParams(params);
+            if (mLastSelection == -1) {
+                mLastSelection = 0;
+            }
+            View oldView = mTabsContainer.getChildAt(mLastSelection);
+            View newView = mTabsContainer.getChildAt(mSelection);
+            int currX = oldView.getLeft();
+            int lastX = newView.getLeft();
+
+            smoothScrollToPosition(currX, lastX, currentWidth, endWidth);
+            // 如果长度超出了当前可视长度，那么ViewPagerTabs也应该跟着滑动.
+            View current = mTabsContainer.getChildAt(mSelection);
+            final int left = current.getLeft();
+            final int right = current.getRight();
+            final int scrollX = getScrollX();
+            if (left < scrollX) {
+                smoothScrollTo(left, 0);
+            } else if (right > scrollX + getMeasuredWidth()) {
+                smoothScrollTo(right - current.getMeasuredWidth(), 0);
+            }
+        }
     }
 
     @Override
@@ -211,5 +252,77 @@ public class ViewPagerSlidingTabs extends HorizontalScrollView implements
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+
+    private Scroller mScroller;
+    private LinearLayout mStripViewContainer;
+    private View mStripView;
+    private int mLastSelection = -1;
+    private int mSelection = -1;
+    private int mNextSelection = -1;
+    private int mStripSelection = -1;
+
+    /**
+     * 平滑移动至指定位置.
+     *
+     * @param from
+     * @param to
+     * @param fromWidth
+     * @param toWidth
+     */
+    private void smoothScrollToPosition(int from, int to, int fromWidth, int toWidth) {
+        if (mScroller != null) {
+            mScroller.abortAnimation();
+        }
+        mScroller = new Scroller(getContext());
+        mScroller.startScroll(-from, fromWidth, from - to, toWidth - fromWidth, 800);
+        invalidate();
+    }
+
+    @Override
+    public void computeScroll() {
+        super.computeScroll();
+        if (canScroll()) {
+            if (mScroller != null) {
+                if (!mScroller.isFinished()) {
+                    mScroller.computeScrollOffset();
+                    int x = mScroller.getCurrX();
+                    // 同时对宽度进行处理，防止宽度突变.
+                    int width = mScroller.getCurrY();
+                    ViewGroup.LayoutParams params = mStripView.getLayoutParams();
+                    params.width = width;
+                    mStripView.setLayoutParams(params);
+                    mStripViewContainer.scrollTo(x, 0);
+                    invalidate();
+                    return;
+                }
+            }
+            if (mSelection != -1 && mStripSelection != mSelection) {
+                // 防止反复调用，导致重复绘制.
+                mStripSelection = mSelection;
+                View view = mTabsContainer.getChildAt(mSelection);
+                ViewGroup.LayoutParams params = mStripView.getLayoutParams();
+                params.width = view.getMeasuredWidth();
+                mStripView.setLayoutParams(params);
+                mStripViewContainer.scrollTo(-view.getLeft(), 0);
+            }
+        }
+    }
+
+    protected boolean canScroll() {
+        return mStripViewContainer != null && mStripView != null;
+    }
+
+    public void addStripLayout(int id) {
+//        mStripViewContainer = (LinearLayout) mcontainer.findViewById(R.id.view_pager_tab_strip);
+//        View view = LayoutInflater.from(getContext())
+//                .inflate(R.layout.view_pager_tab_strip_layout, mStripViewContainer, false);
+//        mStripView = view;
+//        mStripViewContainer.addView(mStripView);
+
+        mStripViewContainer = (LinearLayout) LayoutInflater.from(getContext()).inflate(id, mcontainer, false);
+        mStripView = mStripViewContainer.findViewById(R.id.view_pager_tab_strip_view);
+        mcontainer.addView(mStripViewContainer);
     }
 }

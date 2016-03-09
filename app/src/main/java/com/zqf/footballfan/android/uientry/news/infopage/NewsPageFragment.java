@@ -34,7 +34,7 @@ public class NewsPageFragment extends Fragment{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-        listView = (ListView) inflater.inflate(R.layout.news_list_view, null);
+        listView = (ListView) inflater.inflate(R.layout.news_list_view, container, false);
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams
                 .MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         listView.setLayoutParams(layoutParams);
@@ -120,7 +120,7 @@ public class NewsPageFragment extends Fragment{
         ImageView imageView1 = (ImageView) headerView.findViewById(R.id.image1);
         Picasso.with(getActivity()).load(imagelist.get(0)).into(imageView1);
         ImageView imageView2 = (ImageView) headerView.findViewById(R.id.image2);
-        Picasso.with(getActivity()).load(imagelist.get(1)).placeholder(R.drawable.test).into(imageView2);
+        Picasso.with(getActivity()).load(imagelist.get(1)).placeholder(R.drawable.icon_logo).into(imageView2);
         ImageView imageView3 = (ImageView) headerView.findViewById(R.id.image3);
         Picasso.with(getActivity()).load(imagelist.get(2)).into(imageView3);
     }
@@ -129,18 +129,18 @@ public class NewsPageFragment extends Fragment{
         List<NewsData> dataList = new ArrayList<NewsData>();
         NewsData data;
         data = new NewsData();
-        data.title = "足彩前瞻：德甲第17轮因戈斯塔特vs勒沃库森";
+        data.title = "haha足彩前瞻：德甲第17轮因戈斯塔特vs勒沃库森";
         data.desc = "因戈斯塔特在过去3场比赛中有2次败北，眼下就要迎来他们在德甲的首个冬歇期了，对他们来说总算可以喘口气了。";
         data.image = "http://img.dongqiudi.com//uploads9/allimg/151219/607-151219134245b4.jpg";
-        data.url = "http://www.dongqiudi.com/article/142110";
+        data.url = "http://infoapp.3g.qq.com/g/s?aid=video&iarea=213&i_f=905#play/id=z0019gx45nh";
         data.tag = "活动";
         dataList.add(data);
 
         data = new NewsData();
-        data.title = "年终回忆：2015，难说再见";
+        data.title = "懂球帝年终回忆：2015，难说再见";
         data.desc = "盛年不重来，一日难再晨。转眼，我们已经来到了2015年的年尾。";
         data.image = "http://img.dongqiudi.com//uploads9/allimg/151219/607-151219140405641.jpg";
-        data.url = "http://www.dongqiudi.com/article/142110";
+        data.url = "https://api.dongqiudi.com/article/158322.html";
         data.tag = "活动";
         dataList.add(data);
 
@@ -148,7 +148,7 @@ public class NewsPageFragment extends Fragment{
         data.title = "马克-休斯：博扬肯定不会转会";
         data.desc = "斯托克城在马克-休斯的带领下已经逐步走上了技术流的路线，尤其是前场博扬、沙奇里、阿瑙托维奇和阿费莱的组合更是让人赞叹。";
         data.image = "http://img.dongqiudi.com//uploads9/allimg/151219/511-15121ZU629537.jpg";
-        data.url = "http://www.dongqiudi.com/article/142110";
+        data.url = "https://api.dongqiudi.com/article/158322.html";
         dataList.add(data);
 
         for (int i = 0; i < 10; i++) {

@@ -7,14 +7,14 @@
     <string name="main_football">足球疯</string>
     
     <string name="news_tab_focus">焦点</string>
-    <string name="news_tab_info">国内资讯</string>
-    <string name="news_tab_match">五大联赛</string>
+    <string name="news_tab_info">国内\n资讯</string>
+    <string name="news_tab_match">五大\n联赛</string>
     <string name="news_tab_think">见地</string>
     <string name="news_tab_topic">专题</string>
 
     <string name="match_tab_focus">焦点</string>
-    <string name="match_tab_info">国内赛事</string>
-    <string name="match_tab_match">五大联赛</string>
+    <string name="match_tab_info">国内\n赛事</string>
+    <string name="match_tab_match">五大\n联赛</string>
     <string name="match_tab_cup">杯赛</string>
     <string name="match_tab_other">其他</string>
 

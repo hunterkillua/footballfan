@@ -45,9 +45,8 @@ public class FanCenterFragment extends Fragment {
         mTitleFragmentAdapter.addFragment(fragment, getString(R.string.fan_tab_act));
         mViewPager.setAdapter(mTitleFragmentAdapter);
         mTabsView.initViewPager(mViewPager);
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout
-                .LayoutParams.WRAP_CONTENT);
-        mTabsView.setTabView(R.layout.main_top_tab_layout, params);
+        mTabsView.setTabView(R.layout.main_top_tab_layout);
+        mTabsView.addStripLayout(R.layout.view_pager_tab_strip_layout);
         mTabsView.selectPage(0);
     }
 }
