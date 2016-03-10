@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -42,6 +43,9 @@ public class NewsDetailActivity extends Activity {
                 return false;
             }
         });
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.getSettings().setPluginsEnabled(true);
+        mWebView.getSettings().setPluginState(WebSettings.PluginState.ON);
         mWebView.getSettings().setSupportZoom(true);
         mWebView.getSettings().setBuiltInZoomControls(true);
         mWebView.setWebChromeClient(new WebChromeClient() {

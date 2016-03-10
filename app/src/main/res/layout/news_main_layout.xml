@@ -10,7 +10,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:topbarLeftIcon="@drawable/icon_menu"
-            app:topbarRightIcon="@drawable/fabiao"
+            app:topbarRightIcon="@drawable/icon_send"
             app:topbarTitle="@string/main_news"/>
 
     <View
@@ -22,9 +22,14 @@
     <com.zqf.footballfan.android.widget.ViewPagerSlidingTabs
             android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_height="76dp"
+            android:layout_marginTop="5dp"
             />
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/theme_color_main"/>
 
     <com.zqf.footballfan.android.widget.DefaultViewPager
             android:id="@+id/viewpager"
