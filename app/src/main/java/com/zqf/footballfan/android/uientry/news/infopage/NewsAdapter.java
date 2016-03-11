@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.zqf.footballfan.android.R;
-import com.zqf.footballfan.android.uientry.news.NewsData;
+import com.zqf.footballfan.android.uientry.data.NewsData;
 
 import java.util.List;
 

@@ -1,7 +1,6 @@
 package com.zqf.footballfan.android.uientry.news.infopage;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -14,7 +13,7 @@ import android.widget.ListView;
 import com.squareup.picasso.Picasso;
 import com.zqf.footballfan.android.R;
 import com.zqf.footballfan.android.uientry.UiEntryTo;
-import com.zqf.footballfan.android.uientry.news.NewsData;
+import com.zqf.footballfan.android.uientry.data.NewsData;
 import com.zqf.footballfan.android.util.DensityUtil;
 import com.zqf.footballfan.android.widget.AutoPlayViewPager;
 import com.zqf.footballfan.android.widget.CirclePageIndicator;

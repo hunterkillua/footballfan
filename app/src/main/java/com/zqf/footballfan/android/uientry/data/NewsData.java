@@ -1,4 +1,4 @@
-package com.zqf.footballfan.android.uientry.news;
+package com.zqf.footballfan.android.uientry.data;
 
 /**
  * Created by liyan on 15/12/18.

@@ -7,9 +7,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.zqf.footballfan.android.R;
-import com.zqf.footballfan.android.uientry.news.NewsData;
+import com.zqf.footballfan.android.uientry.data.NewsData;
 import com.zqf.footballfan.android.uientry.news.infopage.NewsAdapter;
-import com.zqf.footballfan.android.uientry.news.topicpage.TopicData;
+import com.zqf.footballfan.android.uientry.data.TopicData;
 import com.zqf.footballfan.android.widget.TopBarLayout;
 
 import java.util.ArrayList;

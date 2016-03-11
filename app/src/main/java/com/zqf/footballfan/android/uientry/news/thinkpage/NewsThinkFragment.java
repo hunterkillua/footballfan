@@ -8,7 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.zqf.footballfan.android.R;
-import com.zqf.footballfan.android.uientry.TimeLineData;
+import com.zqf.footballfan.android.uientry.data.TimeLineData;
+import com.zqf.footballfan.android.uientry.data.ThinkData;
 
 import java.util.ArrayList;
 import java.util.List;

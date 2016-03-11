@@ -1,4 +1,4 @@
-package com.zqf.footballfan.android.uientry;
+package com.zqf.footballfan.android.uientry.data;
 
 /**
  * Created by liyan on 16/1/2.

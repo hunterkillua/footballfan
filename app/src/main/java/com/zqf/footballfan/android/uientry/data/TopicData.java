@@ -1,4 +1,4 @@
-package com.zqf.footballfan.android.uientry.news.topicpage;
+package com.zqf.footballfan.android.uientry.data;
 
 import com.zqf.footballfan.android.uientry.data.UserData;
 

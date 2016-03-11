@@ -56,6 +56,7 @@ public class CommentAdapter extends BaseAdapter {
             holder.identity = (TextView) convertView.findViewById(R.id.identity);
             holder.comment = (TextView) convertView.findViewById(R.id.comment);
             holder.icon = (ImageView) convertView.findViewById(R.id.image);
+            holder.voteCount = (TextView) convertView.findViewById(R.id.vote);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
