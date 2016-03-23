@@ -38,7 +38,7 @@ public class MacthInfoFragment extends Fragment {
         titleFragmentAdapter = new TitleFragmentAdapter(getActivity(), getChildFragmentManager());
         Fragment fragment = new MatchListFragment();
         titleFragmentAdapter.addFragment(fragment, getString(R.string.match_tab_focus));
-        fragment = new NewsPageFragment();
+        fragment = new MatchInfoFragment();
         titleFragmentAdapter.addFragment(fragment, getString(R.string.match_tab_info));
         fragment = new NewsPageFragment();
         titleFragmentAdapter.addFragment(fragment, getString(R.string.match_tab_cup));

@@ -7,14 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.squareup.picasso.Picasso;
-import com.zqf.footballfan.android.R;
-import com.zqf.footballfan.android.util.DensityUtil;
+import com.zqf.footballfan.android.uientry.data.DataParser;
+import com.zqf.footballfan.android.uientry.data.ItemView;
+import com.zqf.footballfan.android.uientry.data.MatchData;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,20 +33,16 @@ public class MatchListFragment extends Fragment {
     }
 
     private void initListView(){
-        List<String> imagelist = new ArrayList<String>();
-        for (int i = 0; i< 6; i++) {
-            imagelist.add("p5.qhimg.com/t01e33eac9e8d68b80b.jpg");
-        }
-        MatchDetailAdapter adapter = new MatchDetailAdapter(getActivity(), imagelist);
+        MatchDetailAdapter adapter = new MatchDetailAdapter(getActivity(), DataParser.getMatchData(""));
         listView.setAdapter(adapter);
     }
 
     static class MatchDetailAdapter extends BaseAdapter {
 
         Context context;
-        List<String> list;
+        List<MatchData> list;
 
-        public MatchDetailAdapter(Context context, List<String> list) {
+        public MatchDetailAdapter(Context context, List<MatchData> list) {
             this.context = context;
             this.list = list;
         }
@@ -70,19 +64,7 @@ public class MatchListFragment extends Fragment {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView;
-            if (convertView == null) {
-                imageView = new ImageView(context);
-                ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT);
-                params.width = DensityUtil.widthPixel;
-                params.height = (int) (DensityUtil.widthPixel * 0.3);
-                imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-                Picasso.with(context).load(list.get(position)).placeholder(R.drawable.match)
-                        .into(imageView);
-                convertView = imageView;
-            }
-            return convertView;
+            return ItemView.getMatchDataView(context, list.get(position), position, convertView, parent);
         }
 
     }
