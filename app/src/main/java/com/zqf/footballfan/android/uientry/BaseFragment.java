@@ -20,6 +20,7 @@ public abstract class BaseFragment extends Fragment {
     protected RefreshLayout swipeRefreshLayout;
     protected boolean hasLoad = false;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         FrameLayout parent = (FrameLayout) inflater.inflate(R.layout.base_fragment_layout, container, false);
@@ -37,7 +38,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        if(getUserVisibleHint() && !hasLoad) {
+        if(getView() !=null && isVisibleToUser && !hasLoad) {
             loadData();
         }
     }
@@ -61,6 +62,14 @@ public abstract class BaseFragment extends Fragment {
         swipeRefreshLayout
                 .setColorSchemeResources(R.color.theme_color_main, R.color.theme_color_main, R.color.theme_color_main,
                         R.color.theme_color_main);
+        loadData();
+        hasLoad = true;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        hasLoad = false;
     }
 
     protected abstract void refreshTop();

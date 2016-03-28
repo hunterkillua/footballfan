@@ -35,16 +35,18 @@ public class FootBallInfoFragment extends Fragment {
         viewPager = (ViewPager) getView().findViewById(R.id.viewpager);
         tabsView = (ViewPagerSlidingTabs) getView().findViewById(R.id.tabs);
         titleFragmentAdapter = new TitleFragmentAdapter(getActivity(), getChildFragmentManager());
-        Fragment fragment = new InfoDetailFragment();
-        titleFragmentAdapter.addFragment(fragment, getString(R.string.news_tab_focus));
-        fragment = new InfoDetailFragment();
-        titleFragmentAdapter.addFragment(fragment, getString(R.string.news_tab_match));
-        fragment = new NewsPageFragment();
-        titleFragmentAdapter.addFragment(fragment, getString(R.string.news_tab_info));
-        fragment = new InfoDetailFragment();
-        titleFragmentAdapter.addFragment(fragment, getString(R.string.news_tab_think));
+        Fragment fragment;
+
+        fragment = new InfoMatchFragment();
+        titleFragmentAdapter.addFragment(fragment, getString(R.string.info_tab_match));
+        fragment = new InfoTeamFragment();
+        titleFragmentAdapter.addFragment(fragment, getString(R.string.info_tab_team));
+        fragment = new InfoMemberFragment();
+        titleFragmentAdapter.addFragment(fragment, getString(R.string.info_tab_member));
+        fragment = new InfoCountryFragment();
+        titleFragmentAdapter.addFragment(fragment, getString(R.string.info_tab_country));
         fragment = new NewsTopicFragment();
-        titleFragmentAdapter.addFragment(fragment, getString(R.string.news_tab_topic));
+        titleFragmentAdapter.addFragment(fragment, getString(R.string.info_tab_other));
         viewPager.setAdapter(titleFragmentAdapter);
         tabsView.initViewPager(viewPager);
         tabsView.setTabView(R.layout.main_top_tab_layout);

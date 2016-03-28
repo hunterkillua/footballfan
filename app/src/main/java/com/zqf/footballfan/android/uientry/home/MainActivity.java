@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import com.zqf.footballfan.android.R;
 import com.zqf.footballfan.android.uientry.fancenter.FanCenterFragment;
 import com.zqf.footballfan.android.uientry.footballinfo.FootBallInfoFragment;
-import com.zqf.footballfan.android.uientry.footballmatch.MacthInfoFragment;
+import com.zqf.footballfan.android.uientry.footballmatch.MacthFragment;
 import com.zqf.footballfan.android.uientry.news.NewsFragment;
 import com.zqf.footballfan.android.uientry.usercenter.LoginFragment;
 import com.zqf.footballfan.android.widget.PagerFragmentAdapter;
@@ -23,7 +23,7 @@ public class MainActivity extends FragmentActivity {
     ViewPagerSlidingTabs tabsView;
     TitleFragmentAdapter titleFragmentAdapter;
     PagerFragmentAdapter pagerFragmentAdapter;
-    Class<? extends Fragment>[] fragments = new Class[] {NewsFragment.class, MacthInfoFragment.class,
+    Class<? extends Fragment>[] fragments = new Class[] {NewsFragment.class, MacthFragment.class,
             LoginFragment.class, FootBallInfoFragment.class, FanCenterFragment.class};
     int[] titlesRes = new int[] {R.string.main_news, R.string.main_match, R.string.main_football, R.string.main_footballinfo,
             R.string.main_fancenter};

@@ -3,14 +3,12 @@ package com.zqf.footballfan.android.uientry.footballmatch;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import com.zqf.footballfan.android.R;
+import com.zqf.footballfan.android.uientry.footballinfo.InfoMatchFragment;
 import com.zqf.footballfan.android.uientry.news.infopage.NewsPageFragment;
 import com.zqf.footballfan.android.uientry.news.topicpage.NewsTopicFragment;
 import com.zqf.footballfan.android.widget.TitleFragmentAdapter;
@@ -19,7 +17,7 @@ import com.zqf.footballfan.android.widget.ViewPagerSlidingTabs;
 /**
  * Created by liyan on 15/12/19.
  */
-public class MacthInfoFragment extends Fragment {
+public class MacthFragment extends Fragment {
 
     ViewPager viewPager;
     ViewPagerSlidingTabs tabsView;
@@ -38,7 +36,7 @@ public class MacthInfoFragment extends Fragment {
         titleFragmentAdapter = new TitleFragmentAdapter(getActivity(), getChildFragmentManager());
         Fragment fragment = new MatchListFragment();
         titleFragmentAdapter.addFragment(fragment, getString(R.string.match_tab_focus));
-        fragment = new MatchInfoFragment();
+        fragment = new InfoMatchFragment();
         titleFragmentAdapter.addFragment(fragment, getString(R.string.match_tab_info));
         fragment = new NewsPageFragment();
         titleFragmentAdapter.addFragment(fragment, getString(R.string.match_tab_cup));

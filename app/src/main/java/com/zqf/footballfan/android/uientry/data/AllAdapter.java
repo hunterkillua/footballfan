@@ -22,14 +22,14 @@ public class AllAdapter extends BaseAdapter {
 
     @Override
     public int getViewTypeCount() {
-        return resultData.classList.size();
+        return resultData.classList.length;
     }
 
     @Override
     public int getItemViewType(int position) {
         Object data = resultData.dataList.get(position);
-        for (int i = 0; i < resultData.classList.size(); i++) {
-            if (data.getClass() == resultData.classList.get(i)) {
+        for (int i = 0; i < resultData.classList.length; i++) {
+            if (data.getClass() == resultData.classList[i]) {
                 return i;
             }
         }
@@ -64,6 +64,14 @@ public class AllAdapter extends BaseAdapter {
                     convertView, parent);
         } else if (data instanceof MatchData) {
             view = ItemView.getMatchDataView(context, (MatchData) data, position, convertView, parent);
+        } else if (data instanceof ImageData[]) {
+            if (((ImageData[]) data).length == 2) {
+                view = ItemView.getInfoTeamView(context, (ImageData[]) data, position, convertView, parent);
+            } else if (((ImageData[]) data).length == 4) {
+                view = ItemView.getInfoMemberItem(context, (ImageData[]) data, position, convertView, parent);
+            }
+        } else if (data instanceof CountryData[]) {
+            view = ItemView.getInfoCountry(context, (CountryData[]) data, position, convertView, parent);
         }
         return view;
     }

@@ -75,6 +75,16 @@
         <item name="android:textSize">@dimen/text_xl</item>
     </style>
 
+    <style name="text_theme_large">
+        <item name="android:textColor">@color/theme_color_main</item>
+        <item name="android:textSize">@dimen/text_xl</item>
+    </style>
+
+    <style name="text_theme_m">
+        <item name="android:textColor">@color/theme_color_main</item>
+        <item name="android:textSize">@dimen/text_m</item>
+    </style>
+
 
     <!-- 文字底部 -->
     <style name="text_tab_bottom">

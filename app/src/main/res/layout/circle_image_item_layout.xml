@@ -11,8 +11,9 @@
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:src="@drawable/icon_logo"
+            android:layout_marginTop="8dp"
             app:civ_border_width="2dp"
-            app:civ_border_color="@android:color/holo_green_dark"
+            app:civ_border_color="@color/theme_color_main"
             />
 
     <TextView
@@ -25,8 +26,7 @@
             android:layout_gravity="center_horizontal"
             android:text="用户"
             android:layout_margin="5dp"
-            android:background="@drawable/news_user_item_text_btn"
-            style="@style/text_normal"
+            style="@style/text_theme_large"
             />
 
 </LinearLayout>
