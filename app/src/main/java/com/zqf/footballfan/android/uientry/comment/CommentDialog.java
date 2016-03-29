@@ -2,10 +2,13 @@ package com.zqf.footballfan.android.uientry.comment;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.zqf.footballfan.android.R;
+
+import killua.hunter.wechatlib.Wechat;
 
 /**
  * Created by liyan on 16/1/3.
@@ -41,6 +44,10 @@ public class CommentDialog extends Dialog {
                 case R.id.pengyouquan:
                     break;
                 case R.id.weixin:
+//                    Wechat.shareWechat(getContext(), "分享到微信测试");
+//                    Bitmap bm = getContext().getResources().getDrawable(R.drawable.icon_logo).
+                    Wechat.shareWechatUrl(getContext(), true, "https://www.zhihu.com/question/19563670",
+                            "title", "desc", null);
                     break;
                 case R.id.jubao:
                     break;
