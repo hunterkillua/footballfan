@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:background="#ffffffff"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.zqf.footballfan.android.widget.TopBarLayout
+            android:id="@+id/topbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:topbarLeftIcon="@drawable/fanhui"
+            app:topbarTitle="搜索"/>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            >
+
+
+        <TextView
+                android:id="@+id/search"
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/text_l"
+                android:textColor="#ffffff"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="搜索"
+                android:singleLine="true"
+                android:background="@drawable/timeline_text_bg2"
+                android:layout_height="wrap_content"/>
+
+        <EditText
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/search"
+                android:hint="请输入关键字"
+                android:padding="5dp"
+                android:layout_marginRight="10dp"
+                android:textSize="@dimen/text_l"
+                android:textColor="@color/theme_color_main"
+                android:background="@drawable/news_user_item_text_btn"/>
+
+    </RelativeLayout>
+
+
+    <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="@color/list_devided"
+            android:dividerHeight="1px"
+            android:listSelector="@android:color/transparent"/>
+</LinearLayout>

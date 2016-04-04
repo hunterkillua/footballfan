@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="30dp">
+
+    <TextView
+            android:id="@+id/text1"
+            android:layout_weight="1"
+            style="@style/text_theme_m"
+            android:background="@drawable/table_retangle_shape"
+            android:textStyle="bold"
+            android:padding="2dp"
+            android:gravity="center"
+            android:text="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    <ImageView
+            android:id="@+id/image"
+            android:layout_weight="1"
+            android:background="@drawable/table_retangle_shape"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"/>
+
+    <TextView
+            android:id="@+id/team"
+            android:layout_weight="3"
+            style="@style/text_theme_m"
+            android:background="@drawable/table_retangle_shape"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="西班牙球队"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+
+    <TextView
+            android:id="@+id/times"
+            android:layout_weight="1"
+            style="@style/text_normal_m"
+            android:background="@drawable/table_retangle_shape"
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="11"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:id="@+id/win"
+            android:layout_weight="1"
+            style="@style/text_normal_m"
+            android:background="@drawable/table_retangle_shape"
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:id="@+id/tie"
+            android:layout_weight="1"
+            style="@style/text_normal_m"
+            android:background="@drawable/table_retangle_shape"
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:id="@+id/fail"
+            android:layout_weight="1"
+            style="@style/text_normal_m"
+            android:background="@drawable/table_retangle_shape"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:id="@+id/goals"
+            android:layout_weight="1"
+            style="@style/text_normal_m"
+            android:background="@drawable/table_retangle_shape"
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:id="@+id/lost"
+            android:layout_weight="1"
+            style="@style/text_normal_m"
+            android:background="@drawable/table_retangle_shape"
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:id="@+id/wins"
+            android:layout_weight="1"
+            style="@style/text_normal_m"
+            android:background="@drawable/table_retangle_shape"
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="11"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:id="@+id/scores"
+            android:layout_weight="1"
+            style="@style/text_theme_m"
+            android:background="@drawable/table_retangle_shape"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="20"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+
+</LinearLayout>

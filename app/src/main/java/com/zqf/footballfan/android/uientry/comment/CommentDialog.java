@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zqf.footballfan.android.R;
+import com.zqf.footballfan.android.util.AndroidUtil;
 
 import killua.hunter.wechatlib.Wechat;
 
@@ -20,7 +21,7 @@ public class CommentDialog extends Dialog {
     }
 
     public CommentDialog(Context context, int theme) {
-        super(context, R.style.dialogNoTitleDialog);
+        super(context, theme);
         setContentView(R.layout.comment_dialog_layout);
         getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         findViewById(R.id.reply).setOnClickListener(mOnClickListener);
@@ -38,15 +39,18 @@ public class CommentDialog extends Dialog {
                 case R.id.reply:
                     break;
                 case R.id.copy:
+                    AndroidUtil.copyTextToClipboard(getContext(), "分享内容");
                     break;
                 case R.id.weibo:
                     break;
                 case R.id.pengyouquan:
+                    Wechat.shareWechatUrl(getContext(), true, "https://www.zhihu.com/question/19563670",
+                            "title", "desc", null);
                     break;
                 case R.id.weixin:
 //                    Wechat.shareWechat(getContext(), "分享到微信测试");
 //                    Bitmap bm = getContext().getResources().getDrawable(R.drawable.icon_logo).
-                    Wechat.shareWechatUrl(getContext(), true, "https://www.zhihu.com/question/19563670",
+                    Wechat.shareWechatUrl(getContext(), false, "https://www.zhihu.com/question/19563670",
                             "title", "desc", null);
                     break;
                 case R.id.jubao:

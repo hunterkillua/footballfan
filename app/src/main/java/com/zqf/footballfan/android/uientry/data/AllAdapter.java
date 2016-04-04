@@ -72,6 +72,12 @@ public class AllAdapter extends BaseAdapter {
             }
         } else if (data instanceof CountryData[]) {
             view = ItemView.getInfoCountry(context, (CountryData[]) data, position, convertView, parent);
+        } else if (data instanceof ScoreData) {
+            view = ItemView.getMatchScores(context, (ScoreData) data, position, convertView, parent);
+        } else if (data instanceof NewsData) {
+            view = ItemView.getNewsDataView(context, (NewsData) data, position, convertView, parent);
+        } else if (data instanceof SearchWordData) {
+            view = ItemView.getSearchViewItem(context, (SearchWordData) data, position, convertView, parent);
         }
         return view;
     }

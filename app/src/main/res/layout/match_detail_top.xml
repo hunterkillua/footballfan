@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="50dp">
+
+    <TextView
+            android:id="@+id/text1"
+            android:layout_weight="1"
+            style="@style/text_theme_m"
+            android:background="@drawable/table_retangle_shape"
+            android:textStyle="bold"
+            android:padding="2dp"
+            android:gravity="center"
+            android:text="*"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    <ImageView
+            android:id="@+id/image"
+            android:layout_weight="1"
+            android:background="@drawable/table_retangle_shape"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"/>
+
+    <TextView
+            android:id="@+id/text3"
+            android:layout_weight="3"
+            style="@style/text_theme_m"
+            android:background="@drawable/table_retangle_shape"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="球队"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+
+    <TextView
+            android:id="@+id/text4"
+            android:layout_weight="1"
+            style="@style/text_theme_m"
+            android:background="@drawable/table_retangle_shape"
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="场"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:id="@+id/text5"
+            android:layout_weight="1"
+            style="@style/text_theme_m"
+            android:background="@drawable/table_retangle_shape"
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="胜"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:id="@+id/text6"
+            android:layout_weight="1"
+            style="@style/text_theme_m"
+            android:background="@drawable/table_retangle_shape"
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="平"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:id="@+id/text7"
+            android:layout_weight="1"
+            style="@style/text_theme_m"
+            android:background="@drawable/table_retangle_shape"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="负"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:id="@+id/text8"
+            android:layout_weight="1"
+            style="@style/text_theme_m"
+            android:background="@drawable/table_retangle_shape"
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="进球"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:id="@+id/text10"
+            android:layout_weight="1"
+            style="@style/text_theme_m"
+            android:background="@drawable/table_retangle_shape"
+            android:padding="5dp"
+            android:gravity="center"
+            android:text="失球"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+        <TextView
+                android:id="@+id/text11"
+                android:layout_weight="1"
+                style="@style/text_theme_m"
+                android:background="@drawable/table_retangle_shape"
+                android:padding="5dp"
+                android:gravity="center"
+                android:text="净胜"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+        <TextView
+                android:id="@+id/text12"
+                android:layout_weight="1"
+                style="@style/text_theme_m"
+                android:background="@drawable/table_retangle_shape"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="积分"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+
+</LinearLayout>

@@ -64,6 +64,21 @@
                 android:windowSoftInputMode="adjustNothing"
                 />
 
+        <activity
+                android:name=".uientry.footballinfo.MatchInfoActivity"
+                android:screenOrientation="portrait"
+                />
+
+        <activity
+                android:name=".uientry.footballinfo.MemberInfoActivity"
+                android:screenOrientation="portrait"
+                />
+
+        <activity
+                android:name=".uientry.footballinfo.SearchActivity"
+                android:screenOrientation="portrait"
+                />
+
 
         <activity android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
                   android:configChanges="keyboardHidden|orientation"

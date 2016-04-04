@@ -35,9 +35,8 @@ public class CommentActivity extends FragmentActivity {
         mTabsView.initViewPager(mViewPager);
         //mTabsView.initTabView();
         mTabsView.setSmooth(false);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout
-                .LayoutParams.WRAP_CONTENT);
-        mTabsView.setTabView(R.layout.comment_tab_layout, params);
+        mTabsView.setTabView(R.layout.comment_tab_layout);
+        mTabsView.addStripLayout(R.layout.view_pager_tab_strip_layout);
         mTabsView.selectPage(0);
         mViewPager.setCurrentItem(0);
     }

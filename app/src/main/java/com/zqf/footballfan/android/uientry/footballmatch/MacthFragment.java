@@ -34,14 +34,14 @@ public class MacthFragment extends Fragment {
         viewPager = (ViewPager) getView().findViewById(R.id.viewpager);
         tabsView = (ViewPagerSlidingTabs) getView().findViewById(R.id.tabs);
         titleFragmentAdapter = new TitleFragmentAdapter(getActivity(), getChildFragmentManager());
-        Fragment fragment = new MatchListFragment();
+        Fragment fragment = new NewsPageFragment();
         titleFragmentAdapter.addFragment(fragment, getString(R.string.match_tab_focus));
         fragment = new InfoMatchFragment();
         titleFragmentAdapter.addFragment(fragment, getString(R.string.match_tab_info));
+        fragment = new MatchListFragment();
+        titleFragmentAdapter.addFragment(fragment, getString(R.string.match_tab_match));
         fragment = new NewsPageFragment();
         titleFragmentAdapter.addFragment(fragment, getString(R.string.match_tab_cup));
-        fragment = new NewsPageFragment();
-        titleFragmentAdapter.addFragment(fragment, getString(R.string.match_tab_match));
         fragment = new NewsTopicFragment();
         titleFragmentAdapter.addFragment(fragment, getString(R.string.match_tab_other));
         viewPager.setAdapter(titleFragmentAdapter);

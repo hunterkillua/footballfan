@@ -10,6 +10,8 @@
             android:text="2016.01.01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minWidth="60dp"
+            android:gravity="center"
             android:background="@drawable/timeline_text_bg1"
             android:textSize="@dimen/text_s"
             android:padding="4dp"

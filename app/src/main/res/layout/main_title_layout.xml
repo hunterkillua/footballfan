@@ -31,7 +31,6 @@
             android:layout_centerVertical="true"
             android:scaleType="centerInside"
             android:padding="8dp"
-            android:src="@drawable/icon_send"
             />
 
 </RelativeLayout>

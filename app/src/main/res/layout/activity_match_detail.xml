@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:background="#ffffffff"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.zqf.footballfan.android.widget.TopBarLayout
+            android:id="@+id/topbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:topbarLeftIcon="@drawable/fanhui"
+            app:topbarRightIcon="@drawable/shoucang_selector"
+            app:topbarTitle="足球联赛"/>
+
+    <include layout="@layout/data_match_item_layout"/>
+
+    <include layout="@layout/normal_info_layout3"/>
+
+
+
+    <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="@color/list_devided"
+            android:listSelector="@android:color/transparent"/>
+
+</LinearLayout>

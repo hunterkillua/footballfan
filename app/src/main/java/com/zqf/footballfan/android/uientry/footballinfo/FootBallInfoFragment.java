@@ -11,9 +11,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.zqf.footballfan.android.R;
+import com.zqf.footballfan.android.uientry.UiEntryTo;
 import com.zqf.footballfan.android.uientry.news.infopage.NewsPageFragment;
 import com.zqf.footballfan.android.uientry.news.topicpage.NewsTopicFragment;
 import com.zqf.footballfan.android.widget.TitleFragmentAdapter;
+import com.zqf.footballfan.android.widget.TopBarLayout;
 import com.zqf.footballfan.android.widget.ViewPagerSlidingTabs;
 
 /**
@@ -26,7 +28,7 @@ public class FootBallInfoFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.news_main_layout, null);
+        return inflater.inflate(R.layout.info_main_layout, null);
     }
 
     @Override
@@ -52,5 +54,22 @@ public class FootBallInfoFragment extends Fragment {
         tabsView.setTabView(R.layout.main_top_tab_layout);
         tabsView.addStripLayout(R.layout.view_pager_tab_strip_layout);
         tabsView.selectPage(0);
+
+        initTopBar();
+    }
+
+    private void initTopBar() {
+        TopBarLayout topBarLayout = (TopBarLayout) getView().findViewById(R.id.topbar);
+        topBarLayout.setClickListener(new TopBarLayout.ClickListener() {
+            @Override
+            public void onLeftClick(View view) {
+
+            }
+
+            @Override
+            public void onRightClick(View view) {
+                UiEntryTo.toSearchActivity(getActivity());
+            }
+        });
     }
 }

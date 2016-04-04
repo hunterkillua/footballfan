@@ -1,4 +1,4 @@
-package com.zqf.footballfan.android.uientry.footballmatch;
+package com.zqf.footballfan.android.uientry.footballinfo;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,24 +11,23 @@ import com.zqf.footballfan.android.uientry.data.DataParser;
 import com.zqf.footballfan.android.widget.TopBarLayout;
 
 /**
- * Created by liyan on 15/12/19.
+ * Created by liyan on 16/4/3.
  */
-public class MatchDetailActivity extends Activity {
-
+public class MatchInfoActivity extends Activity {
 
     ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_match_detail);
+        setContentView(R.layout.activity_info_match_detail);
         init();
         initTopBar();
     }
 
     protected void init() {
         listView = (ListView) findViewById(R.id.listview);
-        AllAdapter adapter = new AllAdapter(this, DataParser.getNewsData());
+        AllAdapter adapter = new AllAdapter(this, DataParser.getSores());
         listView.setAdapter(adapter);
 
     }

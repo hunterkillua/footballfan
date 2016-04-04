@@ -11,13 +11,15 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.zqf.footballfan.android.R;
 import com.zqf.footballfan.android.image.ImageClient;
+import com.zqf.footballfan.android.uientry.UiEntryTo;
+import com.zqf.footballfan.android.util.Logging;
 
 /**
  * Created by liyan on 16/3/14.
  */
 public class ItemView {
 
-    public static View getNewsDataView(Context context, NewsData data, View.OnClickListener listener, int position,
+    public static View getNewsDataView(Context context, NewsData data, int position,
                                 View convertView, ViewGroup parent) {
         NewsDataViewHolder holder;
         if (convertView == null) {
@@ -27,6 +29,7 @@ public class ItemView {
             holder.descTv = (TextView) convertView.findViewById(R.id.desc);
             holder.imageView = (ImageView) convertView.findViewById(R.id.image);
             holder.tagView = (TextView) convertView.findViewById(R.id.tag);
+            holder.listener = new ItemClickListener();
             convertView.setTag(holder);
         } else {
             holder = (NewsDataViewHolder) convertView.getTag();
@@ -41,9 +44,9 @@ public class ItemView {
             holder.tagView.setVisibility(View.VISIBLE);
         }
         Picasso.with(context).load(data.image).into(holder.imageView);
-        if (listener != null) {
-            convertView.setOnClickListener(listener);
-        }
+        holder.listener.type = UiEntryTo.NEWS_DETAIL;
+        holder.listener.action = data.url;
+        convertView.setOnClickListener(holder.listener);
         return convertView;
     }
 
@@ -53,6 +56,7 @@ public class ItemView {
         public TextView descTv;
         public ImageView imageView;
         public TextView tagView;
+        ItemClickListener listener;
     }
 
     public static View getMatchDataView(Context context, MatchData data, int position,
@@ -69,6 +73,7 @@ public class ItemView {
             holder.scroreTv = (TextView) convertView.findViewById(R.id.score);
             holder.channelTv = (TextView) convertView.findViewById(R.id.channel);
             holder.tagImg = (ImageView) convertView.findViewById(R.id.tag);
+            holder.listener = new ItemClickListener();
             convertView.setTag(holder);
         } else {
             holder = (MatchDataViewHolder) convertView.getTag();
@@ -81,12 +86,9 @@ public class ItemView {
         ImageClient.getInstance().load(context, data.leftImage).into(holder.leftImg);
         ImageClient.getInstance().load(context, data.rightImage).into(holder.rightImg);
         ImageClient.getInstance().load(context, data.tag).into(holder.tagImg);
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+        holder.listener.type = UiEntryTo.DATA_MATCH;
+        holder.listener.action = data.action;
+        convertView.setOnClickListener(holder.listener);
         return convertView;
     }
 
@@ -100,6 +102,7 @@ public class ItemView {
         public TextView timeTv;
         public TextView scroreTv;
         public TextView channelTv;
+        ItemClickListener listener;
     }
 
     public static View getThinkView(Context context, ThinkData data, View.OnClickListener listener, int position,
@@ -142,10 +145,14 @@ public class ItemView {
             holder.logo = (ImageView) convertView.findViewById(R.id.logo);
             holder.flag = (ImageView) convertView.findViewById(R.id.flag);
             holder.info = (TextView) convertView.findViewById(R.id.info);
+            holder.listener = new ItemClickListener();
             convertView.setTag(holder);
         } else {
             holder = (MatchInfoHolder) convertView.getTag();
         }
+        holder.listener.type = UiEntryTo.MATCH_DETAIL;
+        holder.listener.action = data.action;
+        convertView.setOnClickListener(holder.listener);
         holder.info.setText(data.info);
         ImageClient.getInstance().load(context, data.logo).into(holder.logo);
         ImageClient.getInstance().load(context, data.flag).into(holder.flag);
@@ -156,6 +163,7 @@ public class ItemView {
         ImageView logo;
         ImageView flag;
         TextView info;
+        ItemClickListener listener;
     }
 
     public static View getTimeLineView(Context context, TimeLineData data, int position, View convertView, ViewGroup
@@ -196,6 +204,7 @@ public class ItemView {
             ImageClient.getInstance().load(context, data[0].image).into(holder.image1);
             holder.text1.setText(data[0].text);
             holder.listener1.action = data[0].action;
+            holder.listener1.type = UiEntryTo.MEMBER_DETAIL;
             holder.layout1.setOnClickListener(holder.listener1);
         } else {
             holder.layout1.setVisibility(View.INVISIBLE);
@@ -207,6 +216,7 @@ public class ItemView {
             ImageClient.getInstance().load(context, data[1].image).into(holder.image2);
             holder.text2.setText(data[1].text);
             holder.listener2.action = data[1].action;
+            holder.listener2.type = UiEntryTo.MEMBER_DETAIL;
             holder.layout2.setOnClickListener(holder.listener2);
         } else {
             holder.layout2.setVisibility(View.INVISIBLE);
@@ -250,6 +260,8 @@ public class ItemView {
                 ImageClient.getInstance().load(context, data[i].image).into(holder.imageView);
                 holder.textView.setText(data[i].text);
                 holder.listener.action = data[i].action;
+                holder.listener.type = UiEntryTo.MEMBER_DETAIL;
+                view.setOnClickListener(holder.listener);
             }
         }
         return convertView;
@@ -278,6 +290,8 @@ public class ItemView {
                 ImageClient.getInstance().load(context, data[i].image).into(holder.imageView);
                 holder.textView.setText(data[i].text);
                 holder.listener.action = data[i].action;
+                holder.listener.type = UiEntryTo.MEMBER_DETAIL;
+                view.setOnClickListener(holder.listener);
             }
         }
         return convertView;
@@ -289,14 +303,59 @@ public class ItemView {
         ItemClickListener listener;
     }
 
+
+    public static View getMatchScores(Context context, ScoreData data, int position, View convertView, ViewGroup
+            parent) {
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.match_detail_item, parent, false);
+        }
+        return convertView;
+    }
+
+    public static class ScoreDataHolder {
+        public ImageView image;
+        public TextView team;
+        public TextView times;
+        public TextView win;
+        public TextView tie;
+        public TextView fail;
+        public TextView goals;
+        public TextView lost;
+        public TextView wins;
+        public TextView scroes;
+    }
+
+    public static View getSearchViewItem(Context context, SearchWordData searchWord, int position, View convertView,
+                                           ViewGroup
+            parent) {
+        ImageDataHolder holder;
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.search_item_layout, parent, false);
+            holder = new ImageDataHolder();
+            holder.imageView = (ImageView) convertView.findViewById(R.id.icon);
+            holder.textView = (TextView) convertView.findViewById(R.id.text);
+            holder.listener = new ItemClickListener();
+            convertView.setTag(holder);
+        } else {
+            holder = (ImageDataHolder) convertView.getTag();
+        }
+        ImageClient.getInstance().load(context, searchWord.image).into(holder.imageView);
+        holder.textView.setText(searchWord.text);
+        holder.listener.type = UiEntryTo.MEMBER_DETAIL;
+        convertView.setOnClickListener(holder.listener);
+        return convertView;
+    }
+
     public static class ItemClickListener implements View.OnClickListener {
 
         public String action;
+        public int type = -1;
 
         @Override
         public void onClick(View v) {
+            action = "http://www.dongqiudi.com/article/142110z";
             if (action != null) {
-
+                UiEntryTo.toActivity(v.getContext(), type, action);
             }
         }
     }
